@@ -5,16 +5,22 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-image: url('school-background.jpg'); /* Replace with your school's background image */
+            background-size: cover;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         header {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
             text-align: center;
             padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
         }
 
         main {
@@ -24,16 +30,22 @@
         }
 
         .block {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ccc;
             padding: 20px;
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             margin: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .block:hover {
+            transform: scale(1.05);
         }
 
         .student {
+            position: relative;
             margin-top: 20px;
         }
 
@@ -47,6 +59,21 @@
             margin-top: 10px;
             font-weight: bold;
         }
+
+        .student #student1 {
+            animation: walk-to-block 5s linear forwards;
+        }
+
+        @keyframes walk-to-block {
+            0% {
+                left: 0;
+                top: 0;
+            }
+            100% {
+                left: 200px; /* Adjust to the desired destination */
+                top: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -56,27 +83,20 @@
     <main>
         <section class="block">
             <h2>Block A</h2>
-            <div class="student">
-                <img src="student1.png" alt="Student 1">
-                <p>John</p>
-            </div>
         </section>
 
         <section class="block">
             <h2>Block B</h2>
-            <div class="student">
-                <img src="student2.png" alt="Student 2">
-                <p>Amy</p>
-            </div>
         </section>
 
         <section class="block">
             <h2>Block C</h2>
-            <div class="student">
-                <img src="student3.png" alt="Student 3">
-                <p>David</p>
-            </div>
         </section>
+
+        <div class="student" id="student1">
+            <img src="student1.png" alt="Student 1">
+            <p>John</p>
+        </div>
     </main>
 </body>
 </html>
