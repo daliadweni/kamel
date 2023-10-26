@@ -1,45 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Animation le long d'un chemin</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <title>School Design</title>
     <style>
-        svg {
-            width: 100%;
-            height: 300px;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
         }
 
-        .icon {
-            position: absolute;
-            width: 40px;
-            height: 40px;
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .block {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+
+        .student {
+            margin-top: 20px;
+        }
+
+        .student img {
+            width: 100px;
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+
+        .student p {
+            margin-top: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Animation le long d'un chemin</h1>
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-        <path id="path" d="M10 100 C 50 0 150 0 190 100" fill="transparent" />
-    </svg>
+    <header>
+        <h1>Welcome to Our School</h1>
+    </header>
+    <main>
+        <section class="block">
+            <h2>Block A</h2>
+            <div class="student">
+                <img src="student1.png" alt="Student 1">
+                <p>John</p>
+            </div>
+        </section>
 
-    <div class="icon">
-        <img src="your-icon.png" alt="Icon">
-    </div>
+        <section class="block">
+            <h2>Block B</h2>
+            <div class="student">
+                <img src="student2.png" alt="Student 2">
+                <p>Amy</p>
+            </div>
+        </section>
 
-    <script>
-        const icon = document.querySelector('.icon');
-        const tl = gsap.timeline({ repeat: -1, yoyo: true });
-
-        tl.to(icon, {
-            duration: 5,
-            motionPath: {
-                path: '#path',
-                align: '#path',
-                autoRotate: true
-            },
-            ease: 'power1.inOut'
-        });
-    </script>
+        <section class="block">
+            <h2>Block C</h2>
+            <div class="student">
+                <img src="student3.png" alt="Student 3">
+                <p>David</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
